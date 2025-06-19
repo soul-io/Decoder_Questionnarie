@@ -2,86 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Decoder Questionnaire</title>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Decoder Questionnaire</title>
 </head>
 <body>
   <h2>Decoder Questionnaire</h2>
-
-  <form id="decoderForm">
+  <form action="https://soulos.app.n8n.cloud/webhook/submission-log" method="POST">
+    
     <label for="name">Name:</label><br>
-    <input type="text" id="name" required><br><br>
+    <input type="text" id="name" name="name" required><br><br>
 
     <label for="age">Age:</label><br>
-    <input type="number" id="age" required><br><br>
+    <input type="number" id="age" name="age" required><br><br>
 
     <label for="email">Email:</label><br>
-    <input type="email" id="email" required><br><br>
+    <input type="email" id="email" name="email" required><br><br>
 
     <hr>
 
-    <label>1. What do people come to you for most often?</label><br>
-    <textarea id="q1" required></textarea><br><br>
+    <label for="q1">1. What do people come to you for most often?</label><br>
+    <textarea id="q1" name="q1" required></textarea><br><br>
 
-    <label>2. What drains your energy the most?</label><br>
-    <textarea id="q2" required></textarea><br><br>
+    <label for="q2">2. What drains your energy the most?</label><br>
+    <textarea id="q2" name="q2" required></textarea><br><br>
 
-    <label>3. What type of work or challenge gets you into a flow state?</label><br>
-    <textarea id="q3" required></textarea><br><br>
+    <label for="q3">3. What type of work or challenge gets you into a flow state?</label><br>
+    <textarea id="q3" name="q3" required></textarea><br><br>
 
-    <label>4. If you had to give a 10-minute speech with no prep, what topic would you choose?</label><br>
-    <textarea id="q4" required></textarea><br><br>
+    <label for="q4">4. If you had to give a 10-minute speech with no prep, what topic would you choose?</label><br>
+    <textarea id="q4" name="q4" required></textarea><br><br>
 
-    <label>5. What is one thing you’ve taught someone else recently?</label><br>
-    <textarea id="q5" required></textarea><br><br>
+    <label for="q5">5. What is one thing you’ve taught someone else recently?</label><br>
+    <textarea id="q5" name="q5" required></textarea><br><br>
 
-    <label>6. What do you notice that others seem to miss?</label><br>
-    <textarea id="q6" required></textarea><br><br>
+    <label for="q6">6. What do you notice that others seem to miss?</label><br>
+    <textarea id="q6" name="q6" required></textarea><br><br>
 
     <button type="submit">Submit</button>
   </form>
-
-  <script>
-    document.getElementById('decoderForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const data = {
-        name: document.getElementById('name').value,
-        age: document.getElementById('age').value,
-        email: document.getElementById('email').value,
-        q1: document.getElementById('q1').value,
-        q2: document.getElementById('q2').value,
-        q3: document.getElementById('q3').value,
-        q4: document.getElementById('q4').value,
-        q5: document.getElementById('q5').value,
-        q6: document.getElementById('q6').value
-      };
-
-      fetch('https://soulos.app.n8n.cloud/webhook/submission-log', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => {
-        if (response.ok) {
-          alert("Form submitted successfully!");
-          document.getElementById('decoderForm').reset();
-        } else {
-          alert("There was an error submitting the form.");
-        }
-      })
-      .catch(error => {
-        alert("Something went wrong: " + error.message);
-      });
-    });
-  </script>
 </body>
 </html>
