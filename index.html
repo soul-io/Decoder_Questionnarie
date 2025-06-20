@@ -6,6 +6,18 @@
   <title>Decoder Questionnaire</title>
 <link rel="stylesheet" href="styles.css">
 </head>
+  <script>
+  // Utility to get query params like ?name=Oliver&email=oliver@...
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param) || "";
+  }
+  // Once the page loads, pre-fill hidden inputs
+  window.onload = () => {
+    document.getElementById("hiddenName").value = getQueryParam("name");
+    document.getElementById("hiddenEmail").value = getQueryParam("email");
+  };
+</script>
 <body>
   <h2>Decoder Questionnaire</h2>
   <form action="https://soulos.app.n8n.cloud/webhook/submission-log" method="POST">
@@ -64,6 +76,8 @@
     
     <label for="q15">15. Do you tend to sense what others are feeling?</label><br>
     <textarea id="q15" name="q15" required></textarea><br><br>
+  <input type="hidden" id="hiddenName" name="name" />
+  <input type="hidden" id="hiddenEmail" name="email" />
     <button type="submit">Submit</button>
   </form>
 </body>
