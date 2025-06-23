@@ -1,15 +1,28 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 form {
   width: 80%;
   max-width: 600px;
+  background-color: #fff;
+  padding: 30px;
   margin-top: 40px;
+
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -22,11 +35,12 @@ form {
 
 .form-step.active {
   display: block;
+
 }
 
 label {
   display: block;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 5px;
   text-align: center;
 }
@@ -34,8 +48,8 @@ label {
 input,
 textarea {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
   box-sizing: border-box;
 }
 
@@ -43,4 +57,16 @@ button {
   display: block;
   margin: 20px auto 0;
   padding: 10px 20px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+  }
 }
