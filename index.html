@@ -1,3 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decoder Questionnaire</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Decoder Questionnaire</h2>
+  <form id="questionnaire" action="https://soulos.app.n8n.cloud/webhook/submission-log" method="POST">
+    <div class="form-step active" id="step1">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="button" id="next1">Continue</button>
+    </div>
+
+    <div class="form-step" id="step2">
+      <label for="q1">1. Favorite book from ages 4–9:</label>
+      <textarea id="q1" name="q1" required></textarea>
+
+      <label for="q2">2. Favorite movie from ages 4–9:</label>
+      <textarea id="q2" name="q2" required></textarea>
+
+      <label for="q3">3. Favorite pretend play or imaginary game from ages 4–9:</label>
+      <textarea id="q3" name="q3" required></textarea>
+
+      <button type="button" id="next2">Continue</button>
+    </div>
+
+    <div class="form-step" id="step3">
+      <label for="q4">4. Favorite toy or game from ages 4–9:</label>
+      <textarea id="q4" name="q4" required></textarea>
+
+      <label for="q5">5. Favorite movie during your teenage years:</label>
+      <textarea id="q5" name="q5" required></textarea>
+
+      <label for="q6">6. Favorite song, band, or music artist during your teenage years:</label>
+      <textarea id="q6" name="q6" required></textarea>
+
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,3 +137,4 @@
   </form>
 </body>
 </html>
+}
