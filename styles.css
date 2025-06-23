@@ -19,14 +19,30 @@ form {
   background-color: #fff;
   padding: 30px;
   margin-top: 40px;
+
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+
 }
 
 label {
   display: block;
   margin-top: 20px;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 input,
@@ -39,7 +55,7 @@ textarea {
 
 button {
   display: block;
-  margin-top: 20px;
+  margin: 20px auto 0;
   padding: 10px 20px;
 }
 
